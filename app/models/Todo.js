@@ -7,16 +7,12 @@ export default class ToDo {
   }
   get Template() {
     return `
-    <div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Featured
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">${}</li>
-    <li class="list-group-item">${}</li>
-    <li class="list-group-item">${}</li>
-  </ul>
-</div>
-    `
+    <tr>
+      <th scope="row"><input type="checkbox" class="custom-control-input" id="customCheck1"></th>
+      <td>${this.description}</td>
+      <td><i class="fas fa-trash-alt" onclick="app.controllers.todoController.deleteToDo(event)"></i></td>
+      <td></td>
+    </tr>
+   `
   }
 }

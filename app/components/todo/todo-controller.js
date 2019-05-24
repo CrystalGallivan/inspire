@@ -4,19 +4,35 @@ const _todoService = new TodoService()
 
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
+	let todos = _todoService.Todos
+	let template = ``
+	todos.forEach(todo => {
+		template += todo.Template
+	})
+	document.getElementById('todos').innerHTML = todos.Template
+}
+function _drawToDoForm() {
+	document.getElementById('todos').innerHTML = `
+	
+	`
 }
 
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
-	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
+	document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
 
 
 export default class TodoController {
 	constructor() {
+		// _todoService.addSubscriber('todos' _drawToDoForm)
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.getTodos()
 		// Don't forget to add your subscriber
+	}
+	renderList() {
+		// _drawTodos();
+		_drawToDoForm();
 	}
 
 	addTodo(e) {
