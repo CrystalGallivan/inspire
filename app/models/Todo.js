@@ -9,7 +9,13 @@ export default class ToDo {
     return `
     	<div class="custom-control custom-checkbox">
 					<input type="checkbox" class="custom-control-input" id="customCheck1">
-					<label class="custom-control-label" for="customCheck1">${this.description}</label>
+          <label class="custom-control-label" for="customCheck1">${this.description}</label>
+          <i class="fas fa-trash"> </i>
+          </div>
    `
   }
 }
+// onclick = "app.controllers.todoController.removeTodo()"
+
+
+// {/* <button onclick/="app.controllers.todoController.removeTodo()"></button> */ }

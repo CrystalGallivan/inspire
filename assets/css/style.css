@@ -1,5 +1,5 @@
 body{
-  color: rgba(173, 222, 231, 1);
+  color: rgb(8, 127, 148);
 }
 #todo-error{
   color: red;
@@ -13,11 +13,10 @@ body{
   min-height: 100vh;
 }
 #check-boxes{
+  float: left;
   display: flex;
-  justify-content: flex-end;
-  align-content: flex-end;
-  position: fixed;
-  bottom: 0;
+  justify-content: flex-start;
+  align-content: flex-start;
 }
 #weather-bar{
   display: block;
@@ -30,8 +29,6 @@ body{
   display: flex;
   align-items: flex-start;
 justify-content: flex-end;
-color: paleturquoise;
-
 }
 #quote-card{
   display: block;
@@ -52,14 +49,11 @@ color: paleturquoise;
   align-content: center;
   position: fixed;
  }
-#todo-list{
- float: right;
- position: fixed;
- bottom: 0;
- align-items: flex-end;
- justify-content: flex-end;
- color: red;
-}
+/* #todo-list{
+ float: left;
+ align-items: flex-start;
+ justify-content: flex-start;
+} */
 #clock{
    margin-top: 250px;
   display: flex;

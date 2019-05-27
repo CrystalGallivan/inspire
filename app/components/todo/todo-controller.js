@@ -1,6 +1,5 @@
 import TodoService from "./todo-service.js";
 
-// _todoService.addSubscriber('todos' _drawToDoForm)
 let _todoService = new TodoService()
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
@@ -13,11 +12,11 @@ function _drawTodos() {
 }
 function _drawToDoForm() {
 	document.getElementById('todos').innerHTML = `<form onsubmit="app.controllers.todoController.addTodo(event)">
-					To do:
-					<input type="text" name="description" value=description">
-					<button class="btn" type="submit"><i
-							class="fas fa-plus"></i></button>
-				</form>
+	<h1>To do:</h1>
+	<input type="text" name="description" value="description">
+	<button class="btn" type="submit"><i
+	class="fas fa-plus"></i></button>
+	</form>
 	
 	`
 }
@@ -32,12 +31,9 @@ export default class TodoController {
 	constructor() {
 		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.addSubscriber('error', _drawError)
+		_todoService.addSubscriber('todos', _drawToDoForm)
 		// Don't forget to add your subscriber
 		_todoService.getTodos()
-	}
-	renderList() {
-		_drawTodos();
-		_drawToDoForm();
 	}
 
 	addTodo(e) {
