@@ -6,6 +6,7 @@ let _imgApi = axios.create({
 	timeout: 3000
 });
 
+
 let _state = {
 	images: {}
 }

@@ -1,18 +1,24 @@
 import TodoService from "./todo-service.js";
 
-const _todoService = new TodoService()
-
+// _todoService.addSubscriber('todos' _drawToDoForm)
+let _todoService = new TodoService()
 function _drawTodos() {
+	debugger
 	//WHAT IS MY PURPOSE?
 	let todos = _todoService.Todos
 	let template = ``
 	todos.forEach(todo => {
 		template += todo.Template
 	})
-	document.getElementById('todos').innerHTML = todos.Template
+	document.getElementById('check-boxes').innerHTML = template
 }
 function _drawToDoForm() {
-	document.getElementById('todos').innerHTML = `
+	document.getElementById('todos').innerHTML = `<form onsubmit="app.controllers.todoController.addTodo(event)">
+					To do:
+					<input type="text" name="description" value=description">
+					<button class="btn" type="submit"><i
+							class="fas fa-plus"></i></button>
+				</form>
 	
 	`
 }
@@ -25,33 +31,33 @@ function _drawError() {
 
 export default class TodoController {
 	constructor() {
-		// _todoService.addSubscriber('todos' _drawToDoForm)
+		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.addSubscriber('error', _drawError)
-		_todoService.getTodos()
 		// Don't forget to add your subscriber
+		_todoService.getTodos()
 	}
 	renderList() {
-		// _drawTodos();
+		_drawTodos();
 		_drawToDoForm();
 	}
 
 	addTodo(e) {
 		e.preventDefault()
-		var form = e.target
-		var todo = {
+		let form = e.target
+		let todo = {
+			description: form.description.value
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
 		}
 
 		_todoService.addTodo(todo)
+		form.reset()
 	}
 
 	toggleTodoStatus(todoId) {
-		// asks the service to edit the todo status
 		_todoService.toggleTodoStatus(todoId)
 	}
 
 	removeTodo(todoId) {
-		// ask the service to run the remove todo with this id
 		_todoService.removeTodo(todoId)
 	}
 

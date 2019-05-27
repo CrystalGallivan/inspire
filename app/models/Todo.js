@@ -7,12 +7,9 @@ export default class ToDo {
   }
   get Template() {
     return `
-    <tr>
-      <th scope="row"><input type="checkbox" class="custom-control-input" id="customCheck1"></th>
-      <td>${this.description}</td>
-      <td><i class="fas fa-trash-alt" onclick="app.controllers.todoController.deleteToDo(event)"></i></td>
-      <td></td>
-    </tr>
+    	<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="customCheck1">
+					<label class="custom-control-label" for="customCheck1">${this.description}</label>
    `
   }
 }

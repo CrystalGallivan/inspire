@@ -11,13 +11,13 @@ export default class Weather {
   }
   get Template() {
     return `
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-  <div class="card-header">${this.city}</div>
+  <div class="card" id='weather-card'>
+  <h3>${this.city}</h3>
   <div class="card-body">
-    <h5 class="card-title">Current Tempurature is:</h5>
-    <p class="card-text">${this.kelvin.toFixed(0)}</p>
+    <h5>Current Temperature is:</h5>
+    <p>${this.kelvin.toFixed(0)}</p>
   </div>
-</div>
+  </div>
     `
   }
 }

@@ -5,7 +5,7 @@ let _qs = new QuoteService()
 function _drawQuote() {
   let quotes = _qs.Quotes
   document.getElementById('quote').innerHTML = `
-  <div class="card">
+  <div class="card" id="quote-card">
   <div class="card-header">
     Quote of the Day
   </div>

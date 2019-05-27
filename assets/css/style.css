@@ -1,3 +1,6 @@
+body{
+  color: rgba(24, 34, 36, 0.76);
+}
 #todo-error{
   color: red;
   font-size: 2em;
@@ -6,4 +9,55 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-width: 100vh;
+  min-height: 100vh;
+}
+#check-boxes{
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  position: fixed;
+  bottom: 0;
+}
+#weather-bar{
+  display: block;
+  top: 0;
+  position: fixed;
+  
+}
+#weather-card{
+  background-color: rgba(255, 255, 255, 0.2);
+  display: block;
+  display: flex;
+  align-items: flex-start;
+justify-content: flex-end;
+max-width: 250px;
+max-height: 175px;
+
+}
+#quote-card{
+  display: block;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  bottom: 0;
+  max-width: 700px;
+}
+
+#greeting{
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+ }
+#todo-list{
+ float: right;
+ position: fixed;
+ bottom: 0;
+ align-items: flex-end;
+ justify-content: flex-end;
+ color: red;
 }
