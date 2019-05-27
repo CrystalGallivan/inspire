@@ -8,12 +8,8 @@ export default class Weather {
   }
   get Template() {
     return `
-  <div class="card" id='weather-card'>
-  <h3><i class="fas fa-cloud"></i> ${this.city}</h3>
-  <div class="card-body">
-    <h5>Temperature:</h5>
-    <p><h2> ${this.kelvin.toFixed(0)}</h2></i></p>
-  </div>
+  <div class="" id='weather-card'>
+  <h6><i class="fas fa-cloud"></i> ${this.city}: ${this.kelvin.toFixed(0)}</h6></i></p>
   </div>
     `
   }

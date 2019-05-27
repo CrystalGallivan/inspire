@@ -26,14 +26,11 @@ body{
   
 }
 #weather-card{
-  background-color: rgba(255, 255, 255, 0.75);
   display: block;
   display: flex;
   align-items: flex-start;
 justify-content: flex-end;
-max-width: 250px;
-max-height: 175px;
-color: black;
+color: paleturquoise;
 
 }
 #quote-card{
