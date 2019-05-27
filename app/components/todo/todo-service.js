@@ -24,12 +24,12 @@ export default class TodoService {
 	get TodoError() {
 		return _state.error
 	}
-	get Todos() {
-		return _state.todos
-		// return _state.todos.map(t => new ToDo(t))
-	}
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
+	}
+	get Todos() {
+		// return _state.todos
+		return _state.todos.map(t => new ToDo(t))
 	}
 
 	getTodos() {
@@ -37,7 +37,7 @@ export default class TodoService {
 			.then(res => {
 				// do something here
 				let data = res.data.data.map(d => new ToDo(d))
-				// _setState('todos', new ToDo(res.data.data))
+				_setState('todos', data)
 				console.log(res)
 			})
 			.catch(err => _setState('error', err.response.data))

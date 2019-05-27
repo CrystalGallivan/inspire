@@ -3,7 +3,6 @@ import TodoService from "./todo-service.js";
 // _todoService.addSubscriber('todos' _drawToDoForm)
 let _todoService = new TodoService()
 function _drawTodos() {
-	debugger
 	//WHAT IS MY PURPOSE?
 	let todos = _todoService.Todos
 	let template = ``
