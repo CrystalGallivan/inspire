@@ -2,7 +2,6 @@ import TodoService from "./todo-service.js";
 
 let _todoService = new TodoService()
 function _drawTodos() {
-	//WHAT IS MY PURPOSE?
 	let todos = _todoService.Todos
 	let template = ``
 	todos.forEach(todo => {
@@ -32,7 +31,7 @@ export default class TodoController {
 		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.addSubscriber('todos', _drawToDoForm)
-		// Don't forget to add your subscriber
+
 		_todoService.getTodos()
 	}
 
@@ -41,7 +40,7 @@ export default class TodoController {
 		let form = e.target
 		let todo = {
 			description: form.description.value
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
+
 		}
 
 		_todoService.addTodo(todo)

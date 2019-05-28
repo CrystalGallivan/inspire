@@ -5,7 +5,6 @@ let _todoApi = axios.create({
 	baseURL: 'https://bcw-sandbox.herokuapp.com/api/crystal/todos/',
 	timeout: 3000
 });
-
 let _state = {
 	todos: [],
 	error: {},
@@ -19,6 +18,7 @@ function _setState(prop, data) {
 	_state[prop] = data
 	_subscribers[prop].forEach(fn => fn())
 }
+
 
 export default class TodoService {
 	get TodoError() {

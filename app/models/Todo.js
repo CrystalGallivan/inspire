@@ -7,15 +7,11 @@ export default class ToDo {
   }
   get Template() {
     return `
-    	<div class="custom-control custom-checkbox">
-					<input type="checkbox" class="custom-control-input" id="customCheck1">
-          <label class="custom-control-label" for="customCheck1">${this.description}</label>
-          <i class="fas fa-trash"> </i>
-          </div>
+    	<li class="custom-control custom-checkbox">
+					<input type="checkbox" onclick = 'app.controllers.todoController.toggleTodoStatus('${this._id}')' class="custom-control-input" id="todoId">
+          <label class="custom-control-label"  for="customCheck1">${this.description}</label>
+          <i class="fas fa-trash" onclick = "app.controllers.todoController.removeTodo('${this._id}')"> </i>
+          </li>
    `
   }
 }
-// onclick = "app.controllers.todoController.removeTodo()"
-
-
-// {/* <button onclick/="app.controllers.todoController.removeTodo()"></button> */ }

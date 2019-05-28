@@ -17,7 +17,7 @@ function _setState(prop, data) {
   _state[prop] = data
   _subscriber[prop].forEach(fn => fn());
 }
-
+// let longEpoch = _state.currentTimeMillis(_state.timeunix) / 1000;
 //PUBLIC
 export default class ClockService {
   addSubscribers(prop, fn) {
