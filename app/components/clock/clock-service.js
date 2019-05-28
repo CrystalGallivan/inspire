@@ -26,6 +26,21 @@ export default class ClockService {
   get Clock() {
     return _state.clock
   }
+  getCurrentDateTime() {
+    debugger
+    let currentDate = new Date(_state.clock * 1000);
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let date = currentDate.getDate();
+    let month = months[currentDate.getMonth()];
+    let year = currentDate.getFullYear();
+    let hour = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    let seconds = currentDate.getSeconds();
+    let dateString = date + ' ' + month + ' ' + year + ' ' + hour + ' ' + minutes + ":" + seconds;
+    console.log(dateString)
+    return dateString
+  }
+
   getClock() {
     _clockApi.get().then(res => {
       _setState('clock', new Clock(res.data))
@@ -34,5 +49,12 @@ export default class ClockService {
       .catch(err => {
         console.error(err)
       })
+  }
+  getCurrentTime() {
+    _clockApi.get().then(res => {
+
+
+    })
+
   }
 }

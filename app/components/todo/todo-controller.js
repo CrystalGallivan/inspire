@@ -14,7 +14,7 @@ function _drawToDoForm() {
 	<h1>To do:</h1>
 	<input type="text" name="description" value="description">
 	<button class="btn" type="submit"><i
-	class="fas fa-plus"></i></button>
+	class="fas fa-1x fa-plus" style="color: white; d-flex; justify-content:center; align-content:center;"></i></button>
 	</form>
 	
 	`

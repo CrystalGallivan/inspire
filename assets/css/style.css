@@ -17,6 +17,7 @@ body{
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
+  flex-direction: column;
 }
 #weather-bar{
   display: block;
@@ -62,4 +63,8 @@ justify-content: flex-end;
   align-content: center;
   position: fixed;
 
+}
+#todos{
+  display: flex;
+  flex-direction: row;
 }
